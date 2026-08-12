@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Nordic Global Equity Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Mock Nordic equity portfolio — Nordic Semiconductor, Evolution AB and four other Nordic large-caps, tracked against OSEBX with live risk stats and a headline Sharpe ratio." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇳🇴</text></svg>" />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1>Nordic Global Equity portfolio</h1>
+    <p class="tagline">Mock long-only Nordic equity book, seeded with 1,000,000 kr · for demonstration purposes only, not investment advice</p>
+  </div>
+  <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">🌓</button>
+</header>
+
+<div id="alert-banner" class="alert-banner hidden" role="alert"></div>
+
+<main>
+  <section class="hero-stats">
+    <div class="stat-tile">
+      <span class="stat-label">Net Asset Value</span>
+      <span class="stat-value" id="nav-value">—</span>
+      <span class="stat-delta" id="nav-delta">—</span>
+    </div>
+    <div class="stat-tile highlight">
+      <span class="stat-label">Sharpe ratio</span>
+      <span class="stat-value" id="sharpe-value">—</span>
+      <span class="stat-sub">the metric this portfolio is built to maximize</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Expected return (ann.)</span>
+      <span class="stat-value" id="return-value">—</span>
+      <span class="stat-sub">trailing-history based</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Volatility (ann.)</span>
+      <span class="stat-value" id="vol-value">—</span>
+      <span class="stat-sub">portfolio, current weights</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-label">Cash</span>
+      <span class="stat-value" id="cash-value">—</span>
+      <span class="stat-sub">dry powder / risk buffer</span>
+    </div>
+  </section>
+
+  <section class="callout macro-thesis">
+    <h2>Macro thesis — the regime this portfolio is built to thrive in</h2>
+    <p>
+      This book is tilted toward a <strong>"resilient Nordic, higher-for-longer"</strong> macro regime:
+      steady-to-elevated policy rates that reward DNB's net interest margin and the pricing power of quality
+      compounders (Novo Nordisk, Evolution AB), a firm-but-not-booming NOK/oil backdrop that supports Equinor
+      without needing a commodity supercycle, and continued risk-on capital flows into structural growth themes
+      — GLP-1 obesity care, IoT connectivity, iGaming — that Novo Nordisk, Nordic Semiconductor and Evolution are
+      levered to. Investor AB's diversified holding-company structure and the cash buffer are the shock absorbers
+      for the scenarios this book is <em>not</em> built for: a sharp global growth scare (hits Nordic Semiconductor's
+      IoT capex cycle and DNB's credit book together) or a commodity price collapse (hits Equinor and the NOK at once).
+    </p>
+  </section>
+
+  <section class="panel chart-panel">
+    <div class="panel-header">
+      <h2>Performance vs. OSEBX</h2>
+      <div class="legend" id="chart-legend"></div>
+    </div>
+    <div class="chart-wrap"><canvas id="perf-chart" height="110"></canvas></div>
+    <p class="data-note">Backtested: today's exact holdings and cash, held constant across the trailing window, rebased to 100 — not realized live P&amp;L, since the fund only started on the inception date below. This is why it updates when you buy or sell.</p>
+    <p class="data-note" id="prices-updated">—</p>
+  </section>
+
+  <section class="panel holdings-panel">
+    <div class="panel-header">
+      <h2>Holdings</h2>
+      <button id="reset-btn" class="btn-ghost">Reset to inception allocation</button>
+    </div>
+    <div class="table-scroll">
+      <table id="holdings-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Sector</th>
+            <th class="num">Shares</th>
+            <th class="num">Price</th>
+            <th class="num">Market value</th>
+            <th class="num">Weight / limit</th>
+            <th class="num">P&amp;L</th>
+            <th>Valuation &amp; sizing rationale</th>
+            <th>Trade</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel risk-panel">
+    <h2>Risk &amp; correlation</h2>
+    <div class="risk-grid">
+      <div class="corr-wrap">
+        <h3>Correlation matrix — daily NOK returns, trailing ~1y</h3>
+        <div id="corr-matrix" class="corr-matrix"></div>
+      </div>
+      <div class="stats-wrap">
+        <h3>Per-position expected return &amp; volatility (annualized)</h3>
+        <p class="data-note">Portfolio beta vs. OSEBX: <strong id="beta-value">—</strong></p>
+        <table id="risk-table">
+          <thead>
+            <tr><th>Ticker</th><th class="num">Exp. return</th><th class="num">Volatility</th><th class="num">Weight</th></tr>
+          </thead>
+          <tbody id="risk-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Position-limit policy</h2>
+    <p class="data-note" style="font-size:0.85rem;color:var(--text-secondary)">
+      Hard cap: no single position may exceed <strong>25% of NAV</strong> — breaching it turns the row's weight badge red
+      and raises the banner at the top of the page. A <strong>20%</strong> weight shows an amber "near limit" warning first.
+      Both thresholds are concentration-risk guardrails, not price targets — a stock crossing the line means the position
+      has grown too large relative to the book, regardless of whether that's good or bad news for the stock itself.
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p><strong>Mock portfolio for demonstration purposes only — not investment advice.</strong> Fund inception: 2026-08-12 at 1,000,000 kr.</p>
+  <p>Prices refresh daily on weekdays via a scheduled GitHub Actions workflow pulling from Yahoo Finance's public chart API — see <code>.github/workflows/update-prices.yml</code> and <code>scripts/update-prices.mjs</code>. A day's lag is expected and fine for this use case. Valuation multiples and sizing rationale are refreshed by hand each quarter after companies report (see <code>data/fundamentals.json</code>) since those don't move day-to-day. Buy/Sell state is stored only in this browser's localStorage.</p>
+</footer>
+
+<div id="trade-modal" class="modal hidden">
+  <div class="modal-card">
+    <h3 id="trade-title">Buy</h3>
+    <p class="modal-sub" id="trade-sub"></p>
+    <div class="modal-field">
+      <label for="trade-amount">Amount (kr)</label>
+      <input type="number" id="trade-amount" min="0" step="100" placeholder="e.g. 25000" />
+    </div>
+    <p class="modal-preview" id="trade-preview"></p>
+    <p class="modal-error" id="trade-error"></p>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="trade-cancel">Cancel</button>
+      <button class="btn-primary" id="trade-confirm">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

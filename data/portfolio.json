@@ -1,0 +1,70 @@
+{
+  "fundName": "Nordic Global Equity portfolio",
+  "inceptionDate": "2026-08-12",
+  "inceptionNav": 1000000,
+  "baseCurrency": "NOK",
+  "maxPositionWeight": 0.25,
+  "warnPositionWeight": 0.20,
+  "riskFreeRate": 0.04,
+  "benchmark": {
+    "ticker": "OSEBX.OL",
+    "name": "Oslo Børs Benchmark Index (OSEBX)"
+  },
+  "holdings": [
+    {
+      "ticker": "NOD.OL",
+      "name": "Nordic Semiconductor",
+      "country": "Norway",
+      "sector": "Semiconductors / IoT",
+      "currency": "NOK",
+      "shares": 886,
+      "costBasis": 169.30
+    },
+    {
+      "ticker": "EVO.ST",
+      "name": "Evolution AB",
+      "country": "Sweden",
+      "sector": "Gaming / Live Casino Tech",
+      "currency": "SEK",
+      "shares": 206,
+      "costBasis": 730.40
+    },
+    {
+      "ticker": "NOVO-B.CO",
+      "name": "Novo Nordisk",
+      "country": "Denmark",
+      "sector": "Healthcare (GLP-1 / Diabetes Care)",
+      "currency": "DKK",
+      "shares": 351,
+      "costBasis": 332.35
+    },
+    {
+      "ticker": "INVE-B.ST",
+      "name": "Investor AB",
+      "country": "Sweden",
+      "sector": "Diversified Holding Company",
+      "currency": "SEK",
+      "shares": 356,
+      "costBasis": 422.20
+    },
+    {
+      "ticker": "DNB.OL",
+      "name": "DNB Bank",
+      "country": "Norway",
+      "sector": "Financials / Banking",
+      "currency": "NOK",
+      "shares": 390,
+      "costBasis": 307.50
+    },
+    {
+      "ticker": "EQNR.OL",
+      "name": "Equinor",
+      "country": "Norway",
+      "sector": "Energy",
+      "currency": "NOK",
+      "shares": 299,
+      "costBasis": 335.00
+    }
+  ],
+  "cash": 149389.77
+}

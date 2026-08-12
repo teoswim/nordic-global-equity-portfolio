@@ -1,0 +1,36 @@
+{
+  "asOf": "Q2 2026 earnings",
+  "note": "Valuation multiples and theses below are curated by hand each quarter after companies report, rather than pulled live. A P/E ratio doesn't move meaningfully day to day — it moves when earnings are reported, roughly four times a year — so hand-refreshing it quarterly is more honest than a daily scrape that would mostly just replay stale figures with a fresh timestamp. Prices and the charts/risk stats above are the part that's genuinely live.",
+  "stocks": {
+    "NOD.OL": {
+      "multiple": "P/E (TTM) ~108x — elevated by a cyclical earnings trough from 2025's IoT chip destocking; consensus forward P/E is closer to 20–25x as margins normalize",
+      "thesis": "Leading low-power Bluetooth LE / cellular IoT chipmaker. Record Q2 2026 revenue of $219M beat consensus, an early signal the destocking cycle is turning.",
+      "sizingRationale": "High-conviction Nordic tech growth story, but sized below Novo Nordisk given single-product-cycle earnings volatility and a depressed near-term P/E that could re-rate in either direction."
+    },
+    "EVO.ST": {
+      "multiple": "P/E (TTM) ~12x, forward ~11x",
+      "thesis": "Dominant B2B live-casino platform for online casino operators, with 65%+ EBITDA margins and strong free cash flow conversion.",
+      "sizingRationale": "Excellent unit economics justify a top-tier weight, but jurisdiction-level gambling regulation is a real headline risk, so it's capped at the same size as Nordic Semiconductor rather than sized higher."
+    },
+    "NOVO-B.CO": {
+      "multiple": "P/E (TTM) ~10.7x, forward ~11–14x — below the drug-manufacturer industry median",
+      "thesis": "Global leader in GLP-1 obesity and diabetes care (Ozempic / Wegovy). Trades at a discount to peers despite structurally growing demand.",
+      "sizingRationale": "Largest single position: a quality compounder with low correlation to the portfolio's Nordic industrials, financials and energy exposure, so it does the most work lowering overall portfolio volatility."
+    },
+    "INVE-B.ST": {
+      "multiple": "P/E ~20x; historically trades close to the net asset value of its listed holdings (Atlas Copco, AstraZeneca, EQT, ABB, and others)",
+      "thesis": "Sweden's largest industrial holding company — effectively a professionally managed, diversified basket of Nordic and global blue chips in a single line.",
+      "sizingRationale": "Sized as a stabilizing core position: because its own NAV is already diversified across roughly fifteen holdings, each krone here adds less idiosyncratic single-stock risk than the same krone in a standalone name."
+    },
+    "DNB.OL": {
+      "multiple": "P/E (TTM) ~9.7x — value-stock territory",
+      "thesis": "Norway's largest bank. Net interest margin benefits from a higher-for-longer Norges Bank policy rate, plus a reliable dividend.",
+      "sizingRationale": "Kept below the growth names — financials add useful rate-cycle diversification, but carry their own credit-cycle sensitivity, so sized moderately rather than as a core holding."
+    },
+    "EQNR.OL": {
+      "multiple": "P/E (TTM) ~11.8x, forward ~8x — below the oil & gas industry median",
+      "thesis": "Majority state-owned energy major with direct exposure to oil and gas prices and the NOK, alongside a growing renewables arm.",
+      "sizingRationale": "Smallest position in the book — the highest standalone volatility and the only pure single-commodity exposure — held mainly for macro/NOK diversification rather than as a top-conviction pick."
+    }
+  }
+}
