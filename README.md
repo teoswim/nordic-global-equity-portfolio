@@ -5,7 +5,7 @@ not a trading product. Seeded with **1,000,000 kr**, it holds six Nordic large-c
 plus cash, tracks daily-refreshed prices, and computes its own risk statistics
 (expected return, volatility, correlation, and a headline **Sharpe ratio**) client-side.
 
-**Live site:** _(add your GitHub Pages URL here after first deploy)_
+**Live site:** https://teoswim.github.io/nordic-global-equity-portfolio/
 
 > Mock portfolio for demonstration purposes only. Not investment advice.
 
