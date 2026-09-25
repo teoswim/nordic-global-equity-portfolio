@@ -1,38 +1,38 @@
 {
-  "lastUpdated": "2026-09-24T20:14:12.252Z",
+  "lastUpdated": "2026-09-25T20:11:56.617Z",
   "source": "Yahoo Finance chart API (unofficial, fetched server-side in GitHub Actions)",
   "fx": {
-    "SEKNOK": 0.9576,
-    "DKKNOK": 1.4451
+    "SEKNOK": 0.9581,
+    "DKKNOK": 1.4464
   },
   "quotes": {
     "NOD.OL": {
-      "price": 185.3,
-      "previousClose": 186.7
+      "price": 184.6,
+      "previousClose": 185.3
     },
     "EVO.ST": {
-      "price": 838.8,
-      "previousClose": 857.4
+      "price": 816,
+      "previousClose": 838.8
     },
     "NOVO-B.CO": {
       "price": 253,
-      "previousClose": 252.25
+      "previousClose": 253
     },
     "INVE-B.ST": {
-      "price": 408.85,
-      "previousClose": 409.2
+      "price": 411.45,
+      "previousClose": 408.85
     },
     "DNB.OL": {
-      "price": 315.1,
-      "previousClose": 314.4
+      "price": 317.1,
+      "previousClose": 315.1
     },
     "EQNR.OL": {
-      "price": 416.3,
-      "previousClose": 406.2
+      "price": 404.7,
+      "previousClose": 416.3
     },
     "OSEBX.OL": {
-      "price": 2096.6599,
-      "previousClose": 2096.5901
+      "price": 2082.8,
+      "previousClose": 2096.6599
     }
   }
 }
