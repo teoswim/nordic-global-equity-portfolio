@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-10-09T21:25:09.942Z",
+  "lastUpdated": "2026-10-12T23:24:48.329Z",
   "source": "Yahoo Finance chart API (unofficial, fetched server-side in GitHub Actions)",
   "fx": {
-    "SEKNOK": 0.9558,
-    "DKKNOK": 1.431
+    "SEKNOK": 0.9531,
+    "DKKNOK": 1.4281
   },
   "quotes": {
     "NOD.OL": {
