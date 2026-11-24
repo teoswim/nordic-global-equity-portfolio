@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-11-20T22:55:03.814Z",
+  "lastUpdated": "2026-11-24T03:07:36.555Z",
   "source": "Yahoo Finance chart API (unofficial, fetched server-side in GitHub Actions)",
   "fx": {
-    "SEKNOK": 0.9547,
-    "DKKNOK": 1.4321
+    "SEKNOK": 0.9558,
+    "DKKNOK": 1.4322
   },
   "quotes": {
     "NOD.OL": {
@@ -31,8 +31,8 @@
       "previousClose": 389.2
     },
     "OSEBX.OL": {
-      "price": 2037.6801,
-      "previousClose": 2068.75
+      "price": 2047.9399,
+      "previousClose": 2037.6801
     }
   }
 }
